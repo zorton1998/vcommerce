@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+          'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-NT57SWPM');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Checkout</h1>
+            <a href="cart.html">Back to Cart</a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <form id="checkout-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="John Doe" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" value="123 Main St" required>
+
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="upi">UPI</option>
+                    <option value="card">Card</option>
+                    <option value="net-banking">Net Banking</option>
+                </select>
+
+                <div id="upi-fields" class="payment-fields">
+                    <label for="upi-id">UPI ID:</label>
+                    <input type="text" id="upi-id" name="upi-id" value="john.doe@upi" required>
+                </div>
+
+                <div id="card-fields" class="payment-fields" style="display: none;">
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="card-number" value="4111 1111 1111 1111" required>
+
+                    <label for="card-expiry">Expiry Date:</label>
+                    <input type="text" id="card-expiry" name="card-expiry" value="12/24" required>
+
+                    <label for="card-cvv">CVV:</label>
+                    <input type="text" id="card-cvv" name="card-cvv" value="123" required>
+                </div>
+
+                <div id="net-banking-fields" class="payment-fields" style="display: none;">
+                    <label for="bank-name">Bank Name:</label>
+                    <input type="text" id="bank-name" name="bank-name" value="Bank of Example" required>
+
+                    <label for="bank-account-number">Account Number:</label>
+                    <input type="text" id="bank-account-number" name="bank-account-number" value="1234567890" required>
+                </div>
+
+                <button type="submit">Place Order</button>
+            </form>
+            <div id="payment-options" style="display:none;">
+                <button id="payment-success">Simulate Payment Success</button>
+                <button id="payment-failure">Simulate Payment Failure</button>
+            </div>
+        </div>
+    </main>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
